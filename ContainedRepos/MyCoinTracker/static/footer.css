@@ -1,0 +1,31 @@
+/* Footer styling */
+
+.footer {
+    background-color: var(--background-nav-color);
+    color: var(--text-color);
+    padding: 40px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.footer-content > a {
+    margin: 0 10px;
+    color: #ddd3a3; /* Ensure this color contrasts well with the footer background */
+    text-decoration: none;
+    font-size: 110%;
+}
+
+.footer-content > a:hover {
+    color: var(--secondary-color);
+}

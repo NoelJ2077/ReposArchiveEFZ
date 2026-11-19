@@ -1,0 +1,4 @@
+FLask==3.0.3
+yfinance
+requests
+gunicorn==23.0.0

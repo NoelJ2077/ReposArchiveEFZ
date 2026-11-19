@@ -1,0 +1,239 @@
+/* Define variables for color scheme */
+:root {
+    --background-color: #292929;
+    --background-nav-color: #363636;
+    --text-color: #FFFFFF;
+    --primary-color: #a25bfa;
+    --secondary-color: #07c586;
+    --container-bg-color: #423b3b;
+    --container-padding: 1.25rem; /* 20px */
+    --container-border-radius: 0.5rem; /* 8px */
+    --navbar-height: 60px;
+    --footer-height: 50px;
+    --footer-padding: 0.9375rem; /* 15px */
+    --form-input-margin-bottom: 1.25rem; /* 20px */
+    --link-hover-transition: background-color 0.3s ease;
+    --btn-padding: 0.625rem; /* 10px */
+    --btn-border-radius: 0.25rem; /* 4px */
+    --delete-btns-color: #7a0505;
+    --delete-btns-hover-color: #ff0000;
+    --gap-small: 1rem; /* For small gaps and paddings */
+    --gap-medium: 2rem; /* For medium gaps and paddings */
+    --font-size-small: 0.9rem; /* Smaller font size for mobile */
+    --font-size-large: 1rem; /* Default font size for desktop */
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Form Styling */
+
+
+/* Navigation Bar Styling */
+.navbar {
+    background-color: var(--background-nav-color);
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--navbar-height);
+}
+.navbar-nav {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--link-hover-transition);
+}
+.nav-links, .navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--navbar-height);
+    gap: 10px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--link-hover-transition);
+}
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--link-hover-transition);
+}
+/* Container Styling */
+.user-form-container, .dashcontainer {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--container-bg-color);
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.dashcontainer {
+    width: 95%;
+}
+
+.group2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 10px;
+    gap: 10px;
+}
+
+/* Portfolio Navigation Bar Styling */
+.portfolio-navbar {
+    background-color: #2C2C2C;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+/* Base Styling for items in .navbar2 -> .group */
+h1, .portfolio-form, #portfolio-name, .dropdown, #portfolio-id, #portfolio-created_at {
+    margin: 5px 2px;
+    padding: 5px;
+    border: var(--primary-color) 1px solid;
+    border-radius: 5px;
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none;
+    background-color: var(--background-color);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    margin-top: 5px;
+}
+
+/* Button Styles */
+.button-style {
+    width: 100%;
+    
+}
+
+/* Input Field Styles */
+.portfolio-form input[type="text"],
+.user-form-container input[type="text"],
+.user-form-container input[type="password"],
+.user-form-container input[type="email"]
+{
+    padding: 10px 20px;
+    background-color: var(--background-nav-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Button-like Elements Styling */
+a.nav-item.nav-link,
+.user-info,
+.button-style,
+.export-button,
+.user-btns,
+.reset-pw-btn,
+.user-form-container input[type="submit"], /* register */
+.portfolio-form input[type="submit"], /* portfolio add, delete, rename */
+.delete-btn[type="submit"] /* delete btn on coinpairs */
+{
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-block: 3px;
+}
+/* Hover effects */
+a.nav-item.nav-link:hover,
+.button-style:hover,
+.export-button:hover,
+.user-btns:hover,
+.reset-pw-btn:hover,
+.user-form-container input[type="submit"]:hover,
+.portfolio-form input[type="submit"]:hover,
+.delete-btn[type="submit"]:hover
+{
+    background-color: var(--secondary-color);
+}
+/* Delete Button Hover Styles */
+.delete-btn:hover,
+.delete-btn[type="submit"]{
+    background-color: var(--delete-btns-color) !important;
+}
+
+.delete-btn:hover,
+.delete-btn[type="submit"]:hover{
+    background-color: var(--delete-btns-hover-color) !important;
+}
+
+/* Custom Dropdown Styles */
+.custom-dropdown {
+    position: absolute; /* Positioning relative to the nearest positioned ancestor */
+    background-color: var(--background-color);
+    width: 200px;
+    border-radius: var(--container-border-radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    overflow: hidden;
+    z-index: 1;
+    max-height: 200px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--background-color);
+}
+
+.custom-dropdown div, .dropdown-item {
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 5px;
+}
+
+.dropdown-item:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Portfolio Display Styling */
+.portfolio-display {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    color: #F5F5F5;
+}
+
+.portfolio-display table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.portfolio-display td, th {
+    border: 1px solid #454545;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--container-bg-color);
+    color: var(--text-color);
+}

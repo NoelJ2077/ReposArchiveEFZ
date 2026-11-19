@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- base.html -->
+<!-- Blueprint:
+'user.login' = login route
+'user.register' = register route
+'main.dashboard' = dashboard route
+'user.logout' = logout route
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - MyCoinTracker</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='footer.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='flash.css') }}">
+</head>
+<body>
+
+    <!-- Flash messages display section -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div id="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <nav class="navbar">
+        <div class="navbar-nav">
+            <!-- Benutzerinfo nur anzeigen, wenn ein Benutzer in der Session ist -->
+            {% if 'user_id' in session %}
+                <div class="user-info">
+                    <span class="user_logged">Angemeldet als: {{ session['username'] }} Email: ({{ session['email'] }})</span>
+                </div>
+                <div class="nav-links">
+                    <a class="nav-item nav-link" href="{{ url_for('user.logout') }}">Abmelden</a>
+                    <a class="nav-item nav-link" href="{{ url_for('main.dashboard') }}">Dashboard</a>
+                    <!-- Weitere Navigationselemente -->
+                </div>
+            {% else %}
+                <div class="nav-links">
+                    <a class="nav-item nav-link" href="{{ url_for('user.login') }}">Anmelden</a>
+                    <a class="nav-item nav-link" href="{{ url_for('user.register') }}">Registrieren</a>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+    
+    <!-- Der Inhalt des gesamten Dashboards without Navbar! -->
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+    <!-- © 2024 By Noël Jörg -->
+    <footer class="footer">
+        <div class="footer-content">
+            <span>© 2024 Noël Jörg</span>
+            <a href="/">Impressum</a>
+            <a href="https://www.gnu.org/licenses/gpl-3.0.de.html" target="_blank">Lizenz - GPL 3</a>
+            <a href="https://github.com/NoelJ2077" target="_blank">GitHub</a>
+            <a href="https://github.com/NoelJ2077/MyCoinTracker/archive/main.zip" download>Download Quellcode</a>
+        </div>
+    </footer>
+    
+    <script>
+        // JavaScript to remove the flash message after 10 seconds
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let flashMessage = document.querySelector('.flash-message');
+            if (flashMessage) {
+                setTimeout(() => {
+                    flashMessage.remove();
+                }, 10000);
+            }
+        });
+    </script>
+    <!-- include js file from static-->
+    <script src="static/apidropdown.js"></script>
+</body>
+</html>

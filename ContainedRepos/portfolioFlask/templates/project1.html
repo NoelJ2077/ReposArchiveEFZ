@@ -1,0 +1,70 @@
+{% extends 'proj_base.html' %}
+
+{% block title %}Project 1{% endblock %}
+
+{% block content %}
+
+  <!-- ======= Portfolio Details Section ======= -->
+  <section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-8">
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+
+              <div class="swiper-slide">
+                <img src="{{ url_for('static', filename='assets/img/projects/pr1/pr1_pic1.png') }}" alt="">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="{{ url_for('static', filename='assets/img/projects/pr1/pr1_pic2.png') }}" alt="">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="{{ url_for('static', filename='assets/img/projects/pr1/pr1_pic3.png') }}" alt="">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="{{ url_for('static', filename='assets/img/projects/pr1/pr1_pic4.png') }}" alt="">
+              </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 bg-light">
+          <div class="portfolio-info">
+            <h3>Project information</h3>
+            <ul>
+              <li><strong>Category</strong>: Web design with Templates</li>
+              <li><strong>Client</strong>: Myself</li>
+              <li><strong>Project date</strong>: Q2 2023</li>
+              <li><strong>Workduration</strong>: 2 weeks (~5 hours total)</li>
+              <li><strong>Repository URL</strong>: None because Archieved</li>
+            </ul>
+          </div>
+          <div class="portfolio-description">
+            <h2>My first public Portfolio Site</h2>
+            <p class="mb-5">
+              During the second year of my apprenticeship to the Applikationsentwickler, I had some free time and i wanted to practice my Web Development skills. So i learned about a Portfolio Website and i think everybody in today's world should have a Portfolio Website. I coded my first Portfolio with a template from <strong><a href="https://startbootstrap.com/theme/resume">StartBootstrap's Resume Template</a></strong>. The first few hours where the hardest because i had to read template documentation and how the styling works. After that, i was able to customize the template to my liking and adding my desired Resume files and Projects.
+            </p>
+            <!-- icon with archieved in large size -->
+            <div class="icon-box">
+              <div class="icon-text-container">
+                  <div class="icon"><i class="bi bi-archive"></i></div>
+                  <h4 class="title">Archieved as from Mai 2024</h4>
+              </div>
+              <p class="description">This Website was active on GitHub Pages from October 2023 to Mai 2024. I took it down and removed the Repository because the website was a little bit laggy and i wanted to make a new one with a better design and more features.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Portfolio Details Section -->
+ 
+
+
+{% endblock %}
+

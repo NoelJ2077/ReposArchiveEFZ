@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Project 2{% endblock %}
+
+{% block content %}
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                    <img src="{{ url_for('static', filename='assets/img/projects/pr2/pr2_pic1.png') }}" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="{{ url_for('static', filename='assets/img/projects/pr2/pr2_pic2.png') }}" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="{{ url_for('static', filename='assets/img/projects/pr2/pr2_pic3.png') }}" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="{{ url_for('static', filename='assets/img/projects/pr2/pr2_pic4.png') }}" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="{{ url_for('static', filename='assets/img/projects/pr2/pr2_pic5.png') }}" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 bg-light">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Web Frameworks with Python</li>
+                <li><strong>Client</strong>: Myself</li>
+                <li><strong>Project date</strong>: Q1 2024</li>
+                <li><strong>Workduration</strong>: 4 weeks (~8 hours total)</li>
+                <li><strong>Repository URL</strong>: <a href="https://github.com/NoelJ2077/MyCoinTracker">MyCoinTracker</a></li>
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <h2>First full stack Web Application written in Python</h2>
+                <p class="mb-5">
+                As we where introduced into backend languages such as Java, C++ and PHP in the second year at Bénédict, I was looking into Python and to how use it for web development. I watched several tutorials on YouTube and read some articles about Flask and Django. I decided to use Flask first because it has a build in micro web server and it is easier to learn. I started with designing the database (SQLITE3) and the API calls. Then, using Jinja2, i created the HTML templates, and created routes and so on until the final product was working. I am using the Free Kraken v2 API to get the real time price data of the cryptocurrencies. I think this Project is a good instruction into how to use Python for web development and how classes and functions can be used to create a full stack web application.
+                </p>
+              <!-- icon with learning experience -->
+              <div class="icon-box">
+                <div class="icon-text-container">
+                    <div class="icon"><i class="bi bi-lightbulb"></i></div>
+                    <h4 class="title">Using this Code for future Web Applications</h4>
+                </div>
+                <p class="description">I learned a lot about instances and classes in Python aswell as how Flask works. I can now easily lookup this code to help me with future projects.</p>
+                <p class="description">The password and importand data such as the user's ID are stored hashed and salted in the database. This way, the user's data is secure and cannot be read by anyone.</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+{% endblock %}

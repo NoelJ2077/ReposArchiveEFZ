@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Error - Noël's Portfolio{% endblock %}
+
+{% block hero %}{% endblock %}
+
+{% block content %}
+    <section id="error" class="error">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Error</h2>
+                <p>Page not found</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="{{ url_for('static', filename='assets/img/error_main.webp') }}" class="img-fluid" alt="error">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content">
+                        <h3>Oops! The page you are looking for doesn't exist.</h3>
+                        <p>
+                            It looks like the page you are trying to visit doesn't exist. Please check the URL and try again.
+                        </p>
+                        
+                    </div>
+                </div>
+
+        </div>
+    </section>
+{% endblock %}

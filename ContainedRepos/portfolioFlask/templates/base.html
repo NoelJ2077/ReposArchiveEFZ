@@ -1,0 +1,133 @@
+<!DOCTYPE html><!-- base.html -->
+<!-- Changes with dynamic website, the hero picture will change based on the given argument! -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <title>{% block title %}{% endblock %}</title><!-- comes from each file -->
+      
+        <!-- Fontsawesome -->
+        <link href="{{ url_for('static', filename='assets/vendor/fontawesome-free-6.5.2-web/css/all.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='assets/vendor/fontawesome-free-6.5.2-web/css/fontawesome.min.css') }}" rel="stylesheet">
+        
+        <!-- Favicons -->
+        <link href="{{ url_for('static', filename='assets/img/favicon.png') }}" rel="icon">
+        <link href="{{ url_for('static', filename='assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+        <!-- Min.CSS -->
+        <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- Vendor CSS Files -->
+        <link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+        <!-- Template Main CSS File -->
+        <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+      
+        <!-- =======================================================
+        * Template Name: DevFolio
+        * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+        * Updated: Mar 17 2024 with Bootstrap v5.3.3
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
+    </head>
+      
+  <body class="body-bg-color bg-dark">
+        <!-- ======= Header ======= -->
+        <!-- use new bg but slightly darkblue -->
+        <header id="header" class="fixed-top"><!-- scrolled-header with .js -->
+            <div class="container d-flex align-items-center justify-content-between">
+                
+                <h1 class="logo"><a href="/">My Portfolio</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+                
+                <nav id="navbar" class="navbar">
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="#hero" js-title="Home">Home</a></li>
+                        <li><a class="nav-link scrollto" href="#about" js-title="About">About</a></li>
+                        <li><a class="nav-link scrollto" href="#services" js-title="Career">Career</a></li>
+                        <li><a class="nav-link scrollto " href="#work" js-title="Projects">My Projects</a></li>
+                        <li><a class="nav-link scrollto " href="#blog" js-title="Interests">Hobbies & Interests</a></li>
+                        <li><a class="nav-link scrollto" href="#contact" js-title="Contact">Contact</a></li>
+                        <li><a class="nav-link scrollto" id="tickercss" style="cursor: pointer;" href="#New_Ticker" js-title="Load new ticker">
+                          <span id="ticker">{{ ticker }}</span>
+                          <span id="price">{{ price }}</span>
+                          <div class="countdown-circle">
+                            <span id="countdown"></span>
+                          </div>
+                        </a></li><!-- countdown in seconds -->
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav><!-- .navbar -->
+            </div>
+        </header>
+        
+        {% block hero %}<!-- Main Page "Portfolio of xyz" -->
+          <!-- ======= Hero Section ======= -->
+            <div id="hero" class="hero route bg-image" style="background-image: url({{ url_for('static', filename='assets/img/hero-bg.jpg') }})">
+                <div class="overlay-itro"></div>
+                <div class="hero-content display-table">
+                <div class="table-cell">
+                    <div class="container">
+                    <!--<p class="display-6 color-d">Hello, world!</p>-->
+                    <h1 class="hero-title mb-4">Portfolio of Noël Jörg</h1>
+                        <p class="hero-subtitle"><span class="typed" data-typed-items="Ongoing software developer"></span></p>
+                    <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+                    </div>
+                </div>
+                </div>
+            </div><!-- End Hero Section -->
+        {% endblock %}
+
+        <!-- Second and all other Pages (sections) -->
+        <main id="main">
+            {% block content %}{% endblock %}
+        </main>
+
+        <!-- TODO: footer auslagern wegen dynamischen Daten -->
+        <footer><!-- ======= Footer ======= -->
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="copyright-box d-flex justify-content-between align-items-center">
+                    <p class="copyright">&copy; Copyright 2024 - 2024 <strong>Noël Jörg</strong></p>
+                    <div class="credits">
+                      <!--
+                      All the links in the footer should remain intact.
+                      You can delete the links only if you purchased the pro version.
+                      Licensing information: https://bootstrapmade.com/license/
+                      Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
+                      -->
+                      Initial Bootstrap Template by: <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                    </div>
+                    <p class="last-updated text-start mb-0">Last Updated: {{ last_updated }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </footer><!-- End  Footer -->
+
+        
+        <div id="preloader"></div>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+      
+        <!-- Vendor JS Files -->
+        <script src="{{ url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/vendor/typed.js/typed.umd.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
+      
+        <!-- Template Main JS File -->
+        <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </body>      
+</html>
+      
